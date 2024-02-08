@@ -136,7 +136,7 @@ const Create = () => {
 										};
 									})
 								}
-								value={formData.email}
+								value={formData.first_name}
 								required
 							/>
 							<label
