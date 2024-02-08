@@ -13,6 +13,7 @@ import {
 } from '../home.types';
 import {useUserContext} from '../context';
 import Loading from '../components/Loading';
+import {BASE_API_URL} from '../constants';
 
 export default function Home() {
 	const router = useRouter();
@@ -53,7 +54,7 @@ export default function Home() {
 			try {
 				setIsLoading(true);
 				const response = await axios.get(
-					`http://localhost:8000/graduates?page=${page}${
+					`${BASE_API_URL}/graduates?page=${page}${
 						years.length ? '&graduate_year=' + years : ''
 					}${faculty ? '&faculty=' + faculty : ''}${
 						departments.length ? '&department=' + departments : ''

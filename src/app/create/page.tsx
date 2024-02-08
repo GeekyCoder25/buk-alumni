@@ -7,6 +7,7 @@ import Image from 'next/image';
 import axios, {AxiosError} from 'axios';
 import {useRouter} from 'next/navigation';
 import Loading from '../components/Loading';
+import {BASE_API_URL} from '../constants';
 
 const Create = () => {
 	const {push} = useRouter();
@@ -83,7 +84,7 @@ const Create = () => {
 		setIsLoading(true);
 		try {
 			const response = await axios.post(
-				'http://localhost:8000/graduates',
+				`${BASE_API_URL}/graduates`,
 				submitFormData
 			);
 			if (response.data._id) {
