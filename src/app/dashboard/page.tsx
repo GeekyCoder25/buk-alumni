@@ -1,9 +1,9 @@
 'use client';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import React, {FC, useEffect, useState} from 'react';
 import axios from 'axios';
-import {faculties} from '../data/faculties.js';
-import {posts} from '../data/posts.js';
+import {faculties} from '../../data/faculties.js';
+import {posts} from '../../data/posts.js';
 import {useRouter} from 'next/navigation';
 import {
 	HeaderModalProps,
@@ -11,9 +11,9 @@ import {
 	ModalQueryState,
 	Student,
 } from '../home.types';
-import {useUserContext} from '../context';
-import Loading from '../components/Loading';
-import {BASE_API_URL} from '../constants';
+import {useUserContext} from '../../context';
+import Loading from '../../components/Loading';
+import {BASE_API_URL} from '../../constants';
 
 export default function Home() {
 	const router = useRouter();

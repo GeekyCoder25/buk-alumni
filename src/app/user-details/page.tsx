@@ -1,10 +1,9 @@
 'use client';
-
 import {useRouter} from 'next/navigation';
-import {useUserContext} from '../context';
-import Navbar from '../components/Navbar';
+import {useUserContext} from '../../context';
+import Navbar from '../../components/Navbar';
 import Image from 'next/image';
-import {posts} from '../data/posts';
+import {posts} from '../../data/posts';
 
 const UserDetails = () => {
 	const {user} = useUserContext();

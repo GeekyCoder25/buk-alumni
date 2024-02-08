@@ -1,13 +1,13 @@
 'use client';
 import React, {useState} from 'react';
-import Navbar from '../components/Navbar';
-import {faculties} from '../data/faculties';
-import {posts} from '../data/posts';
+import Navbar from '../../components/Navbar';
+import {faculties} from '../../data/faculties';
+import {posts} from '../../data/posts';
 import Image from 'next/image';
 import axios, {AxiosError} from 'axios';
 import {useRouter} from 'next/navigation';
-import Loading from '../components/Loading';
-import {BASE_API_URL} from '../constants';
+import Loading from '../../components/Loading';
+import {BASE_API_URL} from '../../constants';
 
 const Create = () => {
 	const {push} = useRouter();

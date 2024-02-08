@@ -1,9 +1,9 @@
 'use client';
 import React, {useState} from 'react';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import {useRouter} from 'next/navigation';
-import {useUserContext} from './context';
+import {useUserContext} from '../context';
 
 const Page = () => {
 	const [searchInputState, setSearchInputState] = useState('');

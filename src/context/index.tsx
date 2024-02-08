@@ -7,7 +7,7 @@ import React, {
 	useContext,
 	useState,
 } from 'react';
-import {Student} from '../home.types';
+import {Student} from '../app/home.types';
 
 interface contextType {
 	user: Student;
