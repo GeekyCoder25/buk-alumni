@@ -223,7 +223,7 @@ const Create = () => {
 							<select
 								name="faculty"
 								id="faculty"
-								className="border-2 p-2"
+								className="border-2 p-2 h-10"
 								onChange={e =>
 									setFormData(prev => {
 										return {
@@ -250,7 +250,7 @@ const Create = () => {
 								<select
 									name="Department"
 									id="faculty"
-									className="border-2 p-2"
+									className="border-2 p-2 h-10"
 									onChange={e =>
 										setFormData(prev => {
 											return {
@@ -328,7 +328,7 @@ const Create = () => {
 							<select
 								name="post"
 								id="post"
-								className="border-2 p-2"
+								className="border-2 p-2 h-10"
 								onChange={e =>
 									setFormData(prev => {
 										return {
