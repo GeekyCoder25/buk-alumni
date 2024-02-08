@@ -4,10 +4,11 @@ import {useUserContext} from '../../context';
 import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 import {posts} from '../../data/posts';
+import {useEffect} from 'react';
 
 const UserDetails = () => {
 	const {user} = useUserContext();
-	const {replace, back} = useRouter();
+	const router = useRouter();
 
 	const {
 		full_name: name,
@@ -23,9 +24,11 @@ const UserDetails = () => {
 		dob,
 	} = user;
 
-	if (!user._id) {
-		return replace('/dashboard');
-	}
+	useEffect(() => {
+		if (!user._id) {
+			return router.replace('/dashboard');
+		}
+	}, [router, user._id]);
 
 	const handleGrade = (cgpa: number): string => {
 		switch (true) {
@@ -50,7 +53,7 @@ const UserDetails = () => {
 			<div className="md:mt-10  max-w-[800px] m-auto shadow-lg p-5 md:p-10">
 				<span
 					className="text-[#0291dc] cursor-pointer inline-block mb-5 md:mb-0"
-					onClick={back}
+					onClick={() => router.back()}
 				>
 					<i className="fas fa-chevron-left"></i> Go back
 				</span>
@@ -100,10 +103,6 @@ const UserDetails = () => {
 						<p className="font-bold">
 							{cgpa ? cgpa.toFixed(2) : 'Not provided'}
 						</p>
-					</div>
-					<div className="w-48">
-						<h3 className="text-gray-500 font-semibold">Home city</h3>
-						<p className="font-bold">{cgpa.toFixed(2) || 'Not provided'}</p>
 					</div>
 					<div className="w-48">
 						<h3 className="text-gray-500 font-semibold">Nickname</h3>

@@ -7,7 +7,7 @@ import {UserContextProvider} from '../context';
 const inter = Inter({subsets: ['latin']});
 
 export const metadata: Metadata = {
-	title: 'BUK ALumni',
+	title: 'BUK Alumni',
 	description: 'A firmware for buk alumni',
 };
 
