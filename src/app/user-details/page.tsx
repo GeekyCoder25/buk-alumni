@@ -12,7 +12,7 @@ const UserDetails = () => {
 
 	const {
 		full_name: name,
-		nick_name,
+		nickname,
 		photo_url: photo,
 		post,
 		faculty,
@@ -22,6 +22,9 @@ const UserDetails = () => {
 		gender,
 		address,
 		dob,
+		graduate_year,
+		favorite_moment_at_school,
+		where_they_are_now,
 	} = user;
 
 	useEffect(() => {
@@ -91,6 +94,10 @@ const UserDetails = () => {
 						<p className="font-bold">{department}</p>
 					</div>
 					<div className="w-48">
+						<h3 className="text-gray-500 font-semibold">Graduate Year</h3>
+						<p className="font-bold">{graduate_year}</p>
+					</div>
+					<div className="w-48">
 						<h3 className="text-gray-500 font-semibold">Post held</h3>
 						<p className="font-bold">{post || 'Nil'}</p>
 					</div>
@@ -106,13 +113,33 @@ const UserDetails = () => {
 					</div>
 					<div className="w-48">
 						<h3 className="text-gray-500 font-semibold">Nickname</h3>
-						<p className="font-bold">{nick_name}</p>
+						<p className="font-bold">{nickname}</p>
 					</div>
 					<div className="w-48">
 						<h3 className="text-gray-500 font-semibold">Gender</h3>
 						<p className="font-bold">{gender}</p>
 					</div>
+					{dob && (
+						<div className="w-48">
+							<h3 className="text-gray-500 font-semibold">Date of birth</h3>
+							<p className="font-bold">{new Date(dob).toLocaleDateString()}</p>
+						</div>
+					)}
 				</div>
+				{favorite_moment_at_school && (
+					<div className="w-full my-10">
+						<h3 className="text-gray-500 font-semibold">
+							Favorite moment at BUK
+						</h3>
+						<p className="font-bold">{favorite_moment_at_school}</p>
+					</div>
+				)}
+				{where_they_are_now && (
+					<div className="w-full">
+						<h3 className="text-gray-500 font-semibold">Current life status</h3>
+						<p className="font-bold">{where_they_are_now}</p>
+					</div>
+				)}
 
 				<div className="mt-20">
 					<h2 className="text-xl font-bold">Contact Information</h2>
@@ -126,15 +153,6 @@ const UserDetails = () => {
 							</a>
 						</div>
 					</div>
-					{dob && (
-						<div className="w-48 flex gap-5 mt-5">
-							<i className="fas fa-calendar mt-1"></i>
-							<div>
-								<h3 className="text-gray-500 font-semibold">Date of Birth</h3>
-								<p>{new Date(dob).toLocaleDateString()}</p>
-							</div>
-						</div>
-					)}
 					<div className="w-48 flex gap-5 mt-5">
 						<i className="fas fa-address-card mt-1"></i>
 						<div>

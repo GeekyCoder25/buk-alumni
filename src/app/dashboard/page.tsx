@@ -248,7 +248,7 @@ export default function Home() {
 											{user.first_name + ' ' + user.last_name}
 										</td>
 										<td className="border-r-2 min-w-32 flex-1 py-5 pr-5">
-											{user.nick_name}
+											{user.nickname}
 										</td>
 										<td className="border-r-2 min-w-32 flex-1 py-5 pr-5">
 											{handleGrade(user.cgpa)}

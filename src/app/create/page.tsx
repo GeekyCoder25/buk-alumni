@@ -88,8 +88,9 @@ const Create = () => {
 				submitFormData
 			);
 			if (response.data._id) {
-				setIsSuccessful(true);
+				return setIsSuccessful(true);
 			}
+			setErrorMessage('Server Error');
 		} catch (error) {
 			if (error instanceof AxiosError) {
 				return console.log('Error', error.response?.data);

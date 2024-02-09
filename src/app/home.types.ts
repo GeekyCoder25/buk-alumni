@@ -9,7 +9,7 @@ export interface Student {
 	faculty: string;
 	department: string;
 	cgpa: number;
-	nick_name: string;
+	nickname: string;
 	post: string;
 	phone_number: string;
 	photo: string;
@@ -17,6 +17,8 @@ export interface Student {
 	gender: 'male' | 'female';
 	address: string;
 	dob: Date;
+	favorite_moment_at_school: string;
+	where_they_are_now: string;
 }
 
 export interface ModalQueryState {
