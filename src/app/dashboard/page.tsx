@@ -39,7 +39,7 @@ export default function Home() {
 	const [cgpa, setCgpa] = useState<string[]>([]);
 	const [post, setPost] = useState<string[]>([]);
 	const [refetch, setRefetch] = useState(false);
-	const {setUser, searchInput} = useUserContext();
+	const {setUser, searchInput, setSearchInput} = useUserContext();
 
 	useEffect(() => {
 		if (searchInput) {
@@ -126,11 +126,12 @@ export default function Home() {
 							type="search"
 							placeholder="Search for a user"
 							className="bg-[#fbfcfc] outline-none flex-1 "
-							onChange={e =>
+							onChange={e => {
 								setModalQuery(prev => {
 									return {...prev, name: e.target.value};
-								})
-							}
+								});
+								setSearchInput('');
+							}}
 							value={modalQuery.name}
 						/>
 					</span>
